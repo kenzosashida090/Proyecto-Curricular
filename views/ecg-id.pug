@@ -1,0 +1,17 @@
+extends base
+block content
+
+    
+  .background.grafica
+    header.header
+      nav.navbar
+        a(href=`/paciente`) Inicio
+    -const {tiempo, ecgDato} = ecgInfo
+    .ecg-graph 
+      h2 Grafica ECG
+      canvas#chartEcg
+    .datos-ecg
+      h1 Tiempo
+      span#tiempoEcg=`${tiempo}`
+      h1 ecgDatos 
+      span#ecgDf=`${ecgDato}`

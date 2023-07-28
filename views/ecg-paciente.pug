@@ -1,0 +1,15 @@
+
+extends base
+block content
+  .background.grafica
+    each ecg in ecgInfo
+      -const {tiempo,comentario,fechaPrueba,_id} = ecg
+      -const {nombre,id} = pacienteInfo
+        .container-card-wrapper 
+          .card
+            h3= `Paciente: ${nombre}`
+            h3= `comentario: ${comentario}`
+            p#iDe= `${_id}`
+            button#delete-button X
+            a(href=`/graficas-paciente/${id}/${_id}`) Leer M&agrave;s
+            
